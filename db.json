@@ -13,8 +13,8 @@
     { "id": 2, "icon_diamond": "https://example.com/icons/diamond.png", "icon_product": "https://example.com/icons/data.png", "product_name": "Paket Data XL 5GB", "nominal_sold": 8000000.0 }
   ],
   "suppliers": [
-    { "no": 1, "supplier_name": "Telkomsel API", "supplier_code": "TSL001", "supplier_status": "Aktif", "server_status": "Online" },
-    { "no": 2, "supplier_name": "Indosat Ooredoo API", "supplier_code": "IDS002", "supplier_status": "Aktif", "server_status": "Online" }
+    { "no": 1, "supplier_name": "Telkomsel API", "supplier_code": "TSL001", "supplier_balance": 100000.0, "server_status": "Stabil" },
+    { "no": 2, "supplier_name": "Indosat Ooredoo API", "supplier_code": "IDS002", "supplier_balance": 300000.0, "server_status": "Down" }
   ],
   "monitor_qris_chart": [
     { "label": "Jan 2025", "value": 5000000.0 },
