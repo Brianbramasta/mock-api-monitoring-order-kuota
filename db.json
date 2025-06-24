@@ -47,5 +47,17 @@
   "transactions_failed": [
     { "no": 1, "date": "2025-06-22", "product_name": "Pulsa Indosat 5rb", "supplier_name": "Supplier A", "product_code": "IND5K", "price": 5200.0, "quantity": 10 },
     { "no": 2, "date": "2025-06-22", "product_name": "Paket Data XL 1GB", "supplier_name": "Supplier B", "product_code": "XL1GB", "price": 11000.0, "quantity": 5 }
+  ],
+  "product_types": [
+    { "id": 1, "name": "Telkomsel" },
+    { "id": 2, "name": "Indosat" },
+    { "id": 3, "name": "XL" },
+    { "id": 4, "name": "Smartfren" },
+    { "id": 5, "name": "Pembayaran Tagihan" }
+  ],
+  "products": [
+    { "id": 1, "name": "Pulsa Telkomsel 5rb" },
+    { "id": 2, "name": "Paket Data XL 1GB" },
+    { "id": 3, "name": "Token PLN 20rb" }
   ]
 }
