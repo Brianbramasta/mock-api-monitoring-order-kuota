@@ -277,6 +277,50 @@ server.delete('/api/v1/void-codes/:id', (req, res) => {
   });
 });
 
+// Endpoint: GET /api/v1/options/product-types
+server.get('/api/v1/options/product-types', (req, res) => {
+  const db = require('./db.json');
+  res.json({
+    code: 200,
+    status: 'success',
+    message: 'Daftar jenis produk berhasil diambil',
+    data: {
+      product_types: db.product_types || []
+    }
+  });
+});
+
+// Endpoint: GET /api/v1/options/products
+server.get('/api/v1/options/products', (req, res) => {
+  const db = require('./db.json');
+  let { search = '', limit = 100, page = 1 } = req.query;
+  limit = parseInt(limit);
+  page = parseInt(page);
+  let products = db.products || [];
+  if (search) {
+    products = products.filter(p => p.name.toLowerCase().includes(search.toLowerCase()));
+  }
+  const total_data = products.length;
+  const total_pages = Math.ceil(total_data / limit);
+  const start = (page - 1) * limit;
+  const end = start + limit;
+  const paginatedProducts = products.slice(start, end);
+  res.json({
+    code: 200,
+    status: 'success',
+    message: 'Daftar produk berhasil diambil',
+    data: {
+      products: paginatedProducts,
+      pagination: {
+        total_data,
+        total_pages,
+        current_page: page,
+        limit
+      }
+    }
+  });
+});
+
 // Fallback ke router bawaan JSON Server
 server.use(router);
 
